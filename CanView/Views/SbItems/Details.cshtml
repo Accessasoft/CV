@@ -1,0 +1,50 @@
+﻿@model CanView.Models.SbItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SbItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SbItemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SbItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SbItemDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SbItemDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SbItemIsMultiSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SbItemIsMultiSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SbItemPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SbItemPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SbItemID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

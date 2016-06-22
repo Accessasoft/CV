@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CanView.Models.SbItem>
+
+@{
+    ViewBag.Title = "Snack Bar";
+    CanView.Models.ApplicationDbContext db = new CanView.Models.ApplicationDbContext();
+}
+
+<div class="content" style="height:100vh">   
+    <div class="row col-md-6 col-xs-12">  
+                @foreach (CanView.ViewModels.SnackBarItemTypeVM SbType in ViewBag.allItems)
+                {                   
+                      <div target="@Html.DisplayFor(modelItem => SbType.ID )" class="link snackbox col-xs-4">
+                         <p class="snack-title">@Html.DisplayFor(modelItem => SbType.ItemTypeName)</p>
+                      </div>                           
+                }                         
+    </div>
+    <div class="row col-md-6 col-xs-12 snackbox-price" style="padding:0 5%;">                 
+                @foreach (CanView.ViewModels.SnackBarItemTypeVM d in ViewBag.allItems)
+                {
+                    string divs = "div" + Html.DisplayFor(modelItem => d.ID);
+                    <div id="@divs" class="stuff this" hidden>
+                        <div class="row">
+                            <p class="snack-title-screen col-xs-12">@Html.DisplayFor(modelItem => d.ItemTypeName)</p>                          
+                            @foreach (var i in d.Item)
+                            {
+                                <p class="snack-points-screen col-xs-6 text-left">@Html.DisplayFor(modelItem => i.ItemName)</p>                              
+                                foreach (var s in i.ItemSizes)
+                                {
+                                            <p class="snack-points-screen col-xs-2 text-right">@Html.DisplayFor(modelItem => s)</p>
+                                }
+                             }                                   
+                         </div>                       
+                    </div>                   
+               }
+      </div>
+</div>

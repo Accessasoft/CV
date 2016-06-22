@@ -1,0 +1,693 @@
+﻿html{overflow-x:hidden;}
+
+body{
+    font-family:'Myriad';
+    background-color:black;
+    overflow-x:hidden;
+}
+
+.content{
+    margin-top:70px;
+}
+
+/*     Navbar Settings      */
+
+.navbar {   
+    background-color:rgba(0,0,0,1);
+    border: 0;
+}
+.navbar-brand{
+    display:none;
+}
+.navbar-logo-img {
+    border-width: 0px;
+}
+.navbar-logo-img img{
+    height: 70px; 
+    transition:margin 9999999s;  
+    margin: -5px 0;
+}
+.navbar, .navbar-collapse.in {
+    overflow: visible;
+}
+.nav li a{
+     border-bottom: 2px solid transparent;
+     border-spacing: 1px 5px;
+     border-width: 2px 5px;
+     color: white;
+     padding: 15px 0px;
+     margin: 0 15px;
+}
+ .nav li a.current, .nav li a:hover{
+     border-bottom: 2px solid white;
+     border-spacing: 1px 5px;
+     border-width: 2px 5px;
+     color: white;
+     background-color:transparent;
+     transition:border-bottom .3s;
+ }
+.navbar .navbar-nav li a:hover
+{
+    color:grey;
+}
+.navbar .navbar-toggle .icon-bar {
+    color: white;
+}
+
+/*       Image Carousel      */
+
+.main-gallery {
+    position: relative;
+    z-index:0;
+    height:70vh;
+}
+.home-gal-img{
+    height:70vh;
+    filter: brightness(.7);
+    -webkit-filter: brightness(.7);
+    background-image:url(../Content/dicompress.jpg);
+    background-size:cover;
+}
+.gallery-image-dark{
+    height:70vh;
+    filter: brightness(.7);
+    -webkit-filter: brightness(.7);
+    background-image:url(../Images/popcorn.jpg);
+    background-size:cover;
+      position:relative;
+    z-index:0;
+}
+.gallery-cell{
+    width: 100%;
+    height:70vh;
+    position:relative;
+    z-index:0;
+}
+.carousel-caption
+{
+    margin: 0 -5vw;
+    position:absolute;
+    z-index:1;
+    top: 0;
+    height: 70vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-caption h3 
+{
+    color:rgba(255,255,255,1); 
+    font-family: Myriad-semibold; 
+    font-size:10vh; 
+    opacity:1.2;    
+}
+#header{
+	width: 200vw;
+	height: 90px;
+    border-bottom: 90px solid #123689;
+    border-left: 160vw solid transparent;
+    font-size:4em;
+    position:relative;
+    z-index:0;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    padding-right: 6vw;
+    margin-top:-50px;
+    margin-left:-100vw;
+    transition: height 1s;
+}
+
+/*    Screen Padding     */
+
+.screenbox {
+    padding: 6vh 5vw;
+    color: white;
+    z-index:0;
+    position:relative;
+}
+.screen1{
+    color:white;
+    background-color:#2a2a2a;
+}
+
+#animatedModal{
+    z-index:5;
+    position: absolute;
+    overflow-y:scroll;
+    padding-bottom:65px;
+}
+
+.screen2{
+    background-color:#c5c5c5;
+    color:black;
+}
+.screen3{
+    background-color:#420000;
+    color:white;
+}
+.screen4{
+    background-color:#123869;
+    color:white;
+}
+
+.modal-content{
+    background-color:transparent;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+    color:white; 
+    padding:2vh 6vw;
+}
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*      Screen Content      */
+
+.movie-description{
+    font-size:1.7em;
+    font-family: Myriad;
+    font-weight: normal;
+}
+.running-time {
+    font-size:2.75em;
+    font-weight:500;
+}
+.title{
+    font-size:3.5em;
+    font-family:Myriad-bold;
+}
+.posters{
+    display:inline-block;
+    height:62vw;
+    width:42vw;
+    padding:0;
+}
+.posters img {
+    margin: 0;
+}
+.watch-trailer ,watch-trailer:visited {
+    font-family:Myriad-semibold; 
+    font-size:20px;
+    border:10px solid white;
+    border-width:2px; 
+    border-spacing: 10px;
+    padding: 7.5px 20px;
+    line-height:4em;
+}
+.watch-trailer:hover{
+    border:10px solid grey;
+    border-width:2.5px; 
+    border-spacing: 10px;
+    color:grey; 
+    text-decoration:none;
+}
+
+/*    Ribbon Settings    */
+
+.ribbon {
+  width: 100%;
+  /*padding: 20px 10px;*/
+  margin: 0 auto;
+  background: transparent;
+  position:relative;
+  z-index:10;
+}
+.ribbon h1 {
+  clear: both;
+  position: relative;
+  color: white;
+  background:#123689 ;
+  font-size: 1.5em;
+  font-family:'Myriad-bold';
+  margin: 0 20px 20px 20px;
+  padding: .75em 20px;
+  z-index:20;
+  text-shadow: 0 -1px black, 0 1px black;
+  -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+.ribbon h1:before,
+.ribbon h1:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  bottom: -2.9vw;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  border-top: 3vw solid #0e305d;
+  border-left: 3vw solid transparent;
+}
+.ribbon h1:after {
+    right: 0px;
+    left: auto;
+    bottom: 0px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(270deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+.ribbon-margins{
+    margin-top:-3vh;
+    margin-bottom:-5vh;
+}
+
+h1, h3 {
+    margin-top:0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Myriad-semibold';
+}
+
+.poster-pad-left{
+    margin-left:1.5vw;
+}
+
+/*       FAQs          */
+
+.faq-header{
+    font-family:Myriad-bold;
+    padding-bottom:20px;
+}
+.faq-padding{
+     padding:6vh 25vw;
+}
+.question{
+    font-family:Myriad-bold;
+    font-size:30px;
+    color:#1c56db;
+    padding-bottom:5px;
+}
+.answer{
+    padding:0 10vw;
+    font-size:20px;
+    color:white;
+    padding-bottom:50px;
+    line-height:1.5em;
+}
+
+/*       Snack Bar          */
+
+.snackbox-wrapper{
+    margin-left:15px;
+}
+.snackbox{
+    background-color:rgba(147,147,147,.15);
+    height: 29.5vh;
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;  
+    -moz-user-select: none;      
+    -ms-user-select: none;       
+    user-select: none; 
+}
+.snackbox:hover{
+    background-color:#123679;
+    border:2px solid black;
+    transition:color, .10s step-start, border, .25s ease-in;
+}
+.snackbox a:visited{
+    background-color:#123679;
+}
+.snackbox-price{
+    background-color:#123679;
+    height:88vh;
+    display:flex;
+    justify-content:center;
+    /*padding-left:1vw;*/
+    align-items:center;
+    margin-top:2px; 
+    margin-left:15px;
+}
+.snack-title{
+    font-size:2.1vw;
+    letter-spacing:1.5px;
+    color:white;
+    text-align:center;
+}
+.snack-title-screen{
+    color:white;
+    font-size:4.0vw; 
+    font-family:Myriad-semibold; 
+    letter-spacing:1.5px;
+    text-align:center;
+    line-height:1.5em;
+}
+.snack-points-screen{
+    color:white;
+    font-size:1.5vw; 
+    font-family:Myriad; 
+    letter-spacing:1.5px;
+    /*text-align:center;*/
+     text-align:left;
+}
+
+/* contact us */
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:70vh;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:70vh;
+    width:100%;
+    position:relative;
+}
+
+/*     Extras     */
+
+.text-right{
+    text-align:right;
+}
+.float-right{
+    float:right;
+}
+.no-text-decoration, .watch-trailer a:link {
+    color:inherit; 
+    text-decoration:none;
+}
+.link{
+    cursor:pointer;
+}
+
+@media (max-width: 1200px) {
+    .content{
+        margin-top:50px;
+    }
+    .navbar .navbar-nav li a {
+        font-size:25px
+    }
+    .nav li a.current,  .nav li a:hover{
+         border-bottom: none;
+         border-spacing: 0px;
+         border-width: 0px;
+         color: white;
+         transition:border-spacing 9999s;
+    }
+    .navbar-brand{
+        display:block;
+        margin-top:10px;
+        margin-left:10px;
+        letter-spacing: 1.5px;
+        font-family:Myriad-semibold;
+    }
+    .navbar-logo-img img{
+        display:none;
+    }
+    .main-gallery{
+        height: 60vh;
+        transition: height 9999999s; /*prevents page jumping on mobile*/
+    }
+    .gallery-cell{
+        transition:height 99999999s;
+    }
+    .carousel-caption
+    {
+        height: 60vh;
+        padding-top:5vh;
+        transition: height 9999999s, padding-top 9999999s; /*prevents page jumping on mobile*/
+    }
+    .carousel-caption h3
+    {
+        font-size:5vw; 
+        /*transition:font-size 99999s*/
+    }
+    #header {
+	    width: 200vw;
+	    height: 30px;
+	    border-bottom: 70px solid #123689;
+        border-left: 100vw solid transparent;
+        font-size:3.25em;
+        text-align:center;
+        padding:0;
+    }
+    .title{
+        font-size:2.5em;
+        text-align:left;
+    }
+    .running-time{
+        font-size:2.0em;    
+        text-align:left;
+    }
+    .movie-description{
+        font-size:1.4em;
+        text-align:left;
+        text-overflow:ellipsis;
+                display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;  
+    }
+    .movie-test{
+        height:5.6em;
+    }
+    .screenbox{
+        padding-top: 40px;
+        padding-bottom: 0px;
+        padding-left:0vw;
+        padding-right:0vw;
+        background-color:black;
+    }
+    .screenbox-last-padding{
+        padding-bottom: 40px;
+    }
+
+    .ribbon h1{
+
+    }
+    .poster-container {
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .posters:hover {
+        -webkit-transition:  filter .25s, -webkit-transform 2s;
+        transition: filter .25s , transform 2s;
+        filter:brightness(.5);
+    }
+
+    .faq-padding{
+        padding:6vh 10vw;
+    }
+    .question{
+        font-size:25px;
+    }
+    .answer{
+        font-size:20px;
+    }
+
+    .snackbox{
+        height: 14vh;
+        font-size:20px;
+        border-width:2px;
+    }
+    .snack-title{
+        font-size:1.5rem;
+        letter-spacing:0px;
+    }
+    .snackbox-wrapper{
+        margin-left:0px;
+        width:100vw;
+    }
+    .snackbox-price{
+        height:46.6vh;
+        margin: 0px 15px -20px 0px;
+    }
+    .snack-title-screen{
+        color:white;
+        font-size:23px; 
+        letter-spacing:1px;
+    }
+    .snack-points-screen {
+        color: white;
+        font-size: 13px;
+        line-height: 1em;
+        letter-spacing: 1px;
+    }
+    .countdown{
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    .poster-pad-left{
+        margin-left:0;
+    }
+    .poster-pad-right{
+        margin-left:1.5vw;
+    }
+    .float-right{
+        float:left;
+    }
+    .close-animatedModal{
+        font-size:50px;
+        text-align:right;
+        font-family:Myriad-bold;
+        color:white;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 4000px) {
+    .posters{
+        display:inline-block;
+        height:375px;
+        width:260px;
+    }
+    .movie-description{
+        font-size:1.6em
+    }
+    /* This actually makes sense just y'know naming conventions*/
+    .poster-pad-right{
+        margin-left:1.5vw;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+    .screenbox{
+        padding-bottom:3vh;
+    }
+     .posters{
+        display:inline-block;
+        height:300px;
+        width:205px;
+    }
+    .movie-description{
+        font-size:1.25em
+    }
+    .title{
+        font-size:2.5em;
+    }
+    .running-time{
+        font-size:2.1em;
+    }
+    .watch-trailer{
+        font-size:1.1em;
+        padding:8px 15px;
+    }
+
+}
+
+@media (min-width: 1400px) and (max-width: 1500px) {
+    .screenbox {
+        padding-bottom: 6vh;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .posters {
+        display:none!important;
+    }
+    .screen1{
+        background-color:#2a2a2a;
+    }
+    .screen2{
+        background-color:#c5c5c5;
+        color:black;
+    }
+    .screen3{
+        background-color:#420000;
+        color:white;
+    }
+    .screen4{
+        background-color:#123869;
+        color:white;
+    }
+}
+
+/*    Navigation Rules    */
+
+@media (max-width: 1175px) {
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+        padding: 20px 0;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        margin-bottom:20px;
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 2.5px;
+        padding-bottom: 2.5px;
+    }
+    .navbar .navbar-nav li a, .navbar-nav li a:hover {
+        color:white;
+        font-family:Myriad-semibold;
+        font-weight:500;
+        font-size:20px;
+        margin-left:-1.5vw;      
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+    .carousel-caption h3
+    {
+        font-size:5rem; 
+        padding: 0 20px;    
+    }
+}
+
+/*      Font Section      */
+@font-face {
+    font-family: 'Myriad';  
+    src: url('../fonts/MYRIADPRO-REGULAR.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Myriad-bold';
+    src: url('../fonts/MYRIADPRO-BOLD.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Myriad-semibold';
+    src: url('../fonts/MYRIADPRO-SEMIBOLD.otf') format('opentype');
+    font-weight:500;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'Myriad-italic';
+    src: url('DroidSerif-BoldItalic-webfont.ttf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}

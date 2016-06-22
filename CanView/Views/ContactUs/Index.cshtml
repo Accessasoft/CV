@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CanView.Models.ContactUs>
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<div class="content">
+    <div class="map-responsive" style="background-color:#e9e8e8;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46638.93499518145!2d-79.26456562238077!3d43.0638674791459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d3494ff9ab2157%3A0xdda9ef5fb888ac03!2sCan-View+Drive-In!5e0!3m2!1sen!2sca!4v1457592503132" width="600" height="450" frameborder="0" style="border:0"  allowfullscreen></iframe>
+    </div>
+
+
+    <div id="header" class="blue-header2 text-right">Contact Us</div>
+
+    <div class="screenbox screen1" style="text-align:right;">
+        <div class="row" style="padding:0 1vw">
+            <div class="screen-content">
+                @foreach (var C in (IEnumerable<CanView.Models.ContactUs>)ViewData["ContactUs"])
+                {
+                    <h1>Location</h1>
+                    <h3>@Html.DisplayFor(modelItem => C.Address)</h3>
+                    <br />
+                    <h1>24 Hour Movie Hotline Telephone Numbers</h1>
+                    <h3>@Html.DisplayFor(modelItem => C.PhoneNumber)</h3>
+                    <br />
+                    <h1>E-Mail</h1>
+                    <h3>@Html.DisplayFor(modelItem =>  C.Email )</h3>
+                    <h1>GPS Location</h1>
+                    <h3>@Html.DisplayFor(modelItem => C.COntactGPSCowards )</h3>
+                }
+            </div>
+        </div>
+    </div>
+</div>

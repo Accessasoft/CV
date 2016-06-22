@@ -1,0 +1,106 @@
+﻿@model CanView.Models.SbItem
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="content" style="height:100vh">
+    <h2>Edit</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>SbItem</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.SbItemID)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.snackBarItemType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.snackBarItemType.SbItemTypeID)
+                    @Html.ValidationMessageFor(model => model.snackBarItemType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SbItemName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SbItemName, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.SbItemName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SbItemDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SbItemDesc, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SbItemDesc, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SbItemIsMultiSize, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.SbItemIsMultiSize)
+                        @Html.ValidationMessageFor(model => model.SbItemIsMultiSize, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SbItemPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SbItemPrice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SbItemPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>           
+            <div class="form-group">
+                <label class="control-label col-md-2">Visible To</label>
+                <div class="col-md-offset-2 col-md-10">
+                    <table class="table">
+                        <tr>
+                            @{
+                                int cnt = 0;
+                                List<CanView.ViewModels.SizeVM> size = ViewBag.SizeList;
+                                foreach (var r in size)
+                                {
+                                    if (cnt++ % 4 == 0)
+                                    {
+                                        @:</tr><tr>
+                                     }
+                                    @:<td>
+                                        <input type="checkbox"
+                                               class="chkRoles"
+                                               name="selectedRoles"
+                                               value="@r.SizeID"
+                                               @(Html.Raw(r.SizeAssigned ? "checked=\"checked\"" : "")) />
+                                        @Html.DisplayFor(modelItem => r.SizeName )
+                                        @:</td>
+                                  }
+                            }
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

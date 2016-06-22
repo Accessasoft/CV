@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CanView.Models.FAQ>
+
+@{
+    ViewBag.Title = "FAQ";
+}
+<div class="content">
+    <div class="text-center faq-padding">
+        <h1 class="faq-header" style="color:white">FAQs</h1>
+
+        @foreach (var Q in (IEnumerable<CanView.Models.FAQ>)ViewData["FAQs"])
+        {
+            <p class="question">@Html.DisplayFor(modelItem => Q.Question)</p>
+            <p class="answer">@Html.DisplayFor(modelItem => Q.Answer)</p>
+        }
+        
+        @*<p class="question">What time do the movies start?</p>
+        <p class="answer">Dusk - as soon as it is dark enough to see the picture on the screen.</p>
+
+        <p class="question">Can I switch screens between movies?</p>
+        <p class="answer">Unfortunately no. You must stay in the screen you purchased tickets for.</p>
+
+        <p class="question">What if it starts to rain?</p>
+        <p class="answer">Movies play rain or shine. We do not issue refunds or passes for rain.</p>
+
+        <p class="question">What about the guys in the trunk?</p>
+        <p class="answer">They don't have to pay as long as they stay in the trunk with the lid closed all night.</p>
+
+        <p class="question">Can we bring our dog?</p>
+        <p class="answer">Yes. We just ask that you follow all the usual doggie courtesies.</p>
+
+        <p class="question">What's with that lone car way off to the side in the far back corner with the steamy windows? Why do they park there?</p>
+        <p class="answer">Um... Ah... they're farsighted! Yeah, that's it, they're farsighted.. and making tea. Must be.</p>
+
+        <p class="question">Can we pay with debit or credit?</p>
+        <p class="answer">Sorry, we are cash only. However, we do have an ATM located inside the concessions building.</p>
+
+        <p class="question">What if my car battery dies?</p>
+        <p class="answer">Just ask at the snack bar and we will give you a boost.</p>
+
+        <p class="question">My wife's nephew always wants to come to the drive in with us but I can't stand him. Do I have to bring him?</p>
+        <p class="answer">Yes. Just keep sending him to the snack bar and we will put up with the little jerk for you.</p>*@
+    </div>
+</div>
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>*@

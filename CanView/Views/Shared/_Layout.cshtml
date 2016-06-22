@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Can View Drive-In</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/di-browser-logo2.png" />`
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Canview Drive-In", "Index", "Home", null, new { @class = "navbar-brand nav-text", @style= "color:white; font-size:20px; padding-top:-10px; padding-left:-10px;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul style="margin: 0 2vw;" class="nav navbar-nav">
+                    <li><a class="navbar-logo-img" style="border-width:0px;" href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/CanViewMoviePass2.png")"/></a></li>
+                </ul>
+                <ul id="thing" style="margin: 0 3vw; background-color:transparent;" class="nav navbar-nav navbar-right">
+                    <li style="font-size:25px; padding-top:17.5px;"><a href="@Url.Action("Index", "Home")">Now Playing</a></li>
+                    <li style="font-size:25px; padding-top:17.5px;"><a href="@Url.Action("About", "Home")">Coming Soon</a></li>
+                    <li style="font-size:25px; padding-top:17.5px;"><a href="@Url.Action("Index", "Pricings")">Pricing</a></li>
+                    <li style="font-size:25px; padding-top:17.5px;"><a href="@Url.Action("Index", "SnackBars")">Snack Bar</a></li>
+                    <li style="font-size:25px; padding-top:17.5px;"><a href="@Url.Action("Index", "FAQs")">FAQ</a></li>
+                    <li style="font-size:25px; padding-top:17.5px;"><a href="@Url.Action("Index", "ContactUs")">Contact Us </a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content container-fluid" @*style="margin-top:90px"*@>
+        @RenderBody()
+        @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>*@
+    </div>
+
+
+</body>
+</html>

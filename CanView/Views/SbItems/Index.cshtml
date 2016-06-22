@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CanView.Models.SbItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SbItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SbItemDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SbItemIsMultiSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SbItemPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SbItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SbItemDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SbItemIsMultiSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SbItemPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SbItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SbItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SbItemID })
+        </td>
+    </tr>
+}
+
+</table>
